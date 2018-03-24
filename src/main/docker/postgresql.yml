@@ -1,0 +1,11 @@
+version: '2'
+services:
+    hhcfronth2-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/HHCFrontH2/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=HHCFrontH2
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

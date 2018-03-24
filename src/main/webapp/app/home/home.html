@@ -1,12 +1,4 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1>Welcome, Java Hipster!</h1>
-            <p class="lead">This is your homepage</p>
-
             <div ng-switch="vm.isAuthenticated()">
                 <div class="alert alert-success" ng-switch-when="true">
                     You are logged in as user "{{vm.account.login}}".
@@ -21,21 +13,63 @@
                 </div>
             </div>
 
-            <p>
-                If you have any question on JHipster:
-            </p>
+    <div class="row">
+        <div class="col-md-6" style="background-color: #0f6ab4; height: 100px">
 
-            <ul>
-                <li><a href="http://www.jhipster.tech/" target="_blank" rel="noopener">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener">follow @java_hipster on Twitter</a></li>
-            </ul>
+        </div>
+        <div class="col-md-6" style="background-color: #0f6ab4; height: 100px" >
 
-            <p>
-             <span>If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
-            </p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6" style="background-color: #7a43b6; height: 100px">
+
+        </div>
+        <div class="col-md-6">
+            <div id="cloud" style="height: 200px; width:500px"></div>
+        </div>
+        <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
+
+        <link rel="stylesheet" href="bower_components/jqcloud2/dist/jqcloud.css">
+
+        <script type="application/javascript">
+
+
+            var basic_words = [
+                {text: "Pneumopathie", weight: 5,link: './#'},
+                {text: "Bronchite", weight: 5, link: '#'},
+                {text: "Polypose", weight: 4,link: '#'},
+                {text: "Endocardite", weight: 5,link: '#'},
+                {text: "Valvulopathies", weight: 3,link: '#'},
+                {text: "cardiaques", weight: 7,link: '#'},
+                {text: "Cardiomyopathie", weight: 6,link: '#'},
+                {text: "Diabète", weight: 20,link: '#'},
+                {text: "Obésité", weight: 3,link: '#'},
+                {text: "Bronchite", weight: 4,link: '#'},
+                {text: "cardiaques", weight: 5,link: '#'},
+            ];
+
+            $.each(basic_words, function( index, value ) {
+                value.handlers = {
+                    click: function () {
+                        alert('You clicked the word !');
+                    }
+                };
+            });
+
+            $('#cloud').jQCloud(basic_words);
+
+            for(wordIndex=0;wordIndex < basic_words.length; wordIndex++){
+                node = $('#cloud_word_' + wordIndex);
+                node.replaceWith("<a>wordIndex</a>");
+            }
+        </script>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="background-color: #00b3ee; height: 100px;">
+
         </div>
     </div>
 </div>

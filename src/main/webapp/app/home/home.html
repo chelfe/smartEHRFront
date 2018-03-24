@@ -14,19 +14,36 @@
             </div>
 
     <div class="row">
-        <div class="col-md-6" style="background-color: #0f6ab4; height: 100px">
-
+        <div class="col-md-offset-1 col-md-2">
+            <img src="content/images/jeanneDArc.jpg" class="img-responsive img-circle" width="200px" height="200px"/>
+            <p style="text-align: center">Jeanne d'Arc, 67 ans</p>
         </div>
-        <div class="col-md-6" style="background-color: #0f6ab4; height: 100px" >
-
+        <div class="col-md-offset-1 col-md-4">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10">
+                    <b>Antécédents :</b>
+                    <ul id="lastInfoList"></ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10" >
+                    <b>Prescriptions en court :</b>
+                    <ul id="onGoingPrescriptionsList"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" >
+            <b>Contacts :</b>
+            <div id="contactList"></div>
         </div>
 
     </div>
     <div class="row">
-        <div class="col-md-6" style="background-color: #7a43b6; height: 100px">
-
+        <div class="col-md-offset-3 col-md-3">
+            <div id="categoriesList" class="form-check">
+            </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div id="cloud" style="height: 200px; width:500px"></div>
         </div>
         <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
@@ -35,20 +52,97 @@
 
         <script type="application/javascript">
 
-
+            var onGoingPrescriptionsList=["3 interventions chirurgicales","Rhinoplatie","Coloscopie"];
+            var lastInfoList = ["Daonil (jusqu'au 31/12/2018)"];
+            var contactList = ["gege.dermato@mss.sante.gov","nono.kine@mss.sante.gov"];
+            var categoriesSet = new Set();
+            var categoriesColor = new Map();
+            var categoriesChecked = new Map();
+            var temporary_words;
             var basic_words = [
-                {text: "Pneumopathie", weight: 5,link: './#'},
-                {text: "Bronchite", weight: 5, link: '#'},
-                {text: "Polypose", weight: 4,link: '#'},
-                {text: "Endocardite", weight: 5,link: '#'},
-                {text: "Valvulopathies", weight: 3,link: '#'},
-                {text: "cardiaques", weight: 7,link: '#'},
-                {text: "Cardiomyopathie", weight: 6,link: '#'},
-                {text: "Diabète", weight: 20,link: '#'},
-                {text: "Obésité", weight: 3,link: '#'},
-                {text: "Bronchite", weight: 4,link: '#'},
-                {text: "cardiaques", weight: 5,link: '#'},
-            ];
+                {
+                    text: "diabete",
+                    weight: 19,
+                    category: "Diabétologie",
+                    color: "#6687E7",
+                    link : "#"
+                },
+                {
+                    text: "erysipele",
+                    weight: 14,
+                    category: "Maladies infectieuses",
+                    color: "#ffe39f",
+                    link : "#"
+                },
+                {
+                    text: "hypoglycemie",
+                    weight: 6,
+                    category: "Diabétologie",
+                    color: "#6687E7",
+                    link : "#"
+                },
+                {
+                    text: "lymphoedeme",
+                    weight: 6,
+                    category: "Cardio-vasculaire",
+                    color: "#FF3232",
+                    link : "#"
+                },
+                {
+                    text: "hyperkeratose",
+                    weight: 4,
+                    category: "Dermatologie",
+                    color: "#ffe0bd",
+                    link : "#"
+                },
+                {
+                    text: "obesite",
+                    weight: 3,
+                    category: "Cardio-vasculaire",
+                    color: "#FF3232",
+                    link : "#"
+                },
+                {
+                    text: "retinopathie",
+                    weight: 3,
+                    category: "Diabétologie",
+                    color: "#6687E7",
+                    link : "#"
+                },
+                {
+                    text: "anemie",
+                    weight: 2,
+                    category: "Hématologie",
+                    color: "#FF9999",
+                    link : "#"
+                },
+                {
+                    text: "neuropathie diabetique",
+                    weight: 2,
+                    category: "Diabétologie",
+                    color: "#6687E7",
+                    link : "#"
+                },
+                {
+                    text: "retinopathie diabetique",
+                    weight: 2,
+                    category: "Diabétologie",
+                    color: "#6687E7",
+                    link : "#"
+                }
+            ]
+
+            $.each(onGoingPrescriptionsList, function( index, value ) {
+               $("#lastInfoList").append("<li>" + value + "</li>");
+            });
+
+            $.each(lastInfoList, function( index, value ) {
+                $("#onGoingPrescriptionsList").append("<li>" + value + "</li>");
+            });
+
+            $.each(contactList, function( index, value ) {
+                $("#contactList").append("<p></p><a href:'" + value + "'>" + value + "</a></p>");
+            });
 
             $.each(basic_words, function( index, value ) {
                 value.handlers = {
@@ -56,9 +150,39 @@
                         alert('You clicked the word !');
                     }
                 };
+
+                categoriesSet.add(value.category);
+                categoriesColor.set(value.category,value.color);
+                categoriesChecked.set(value.category,true);
+
             });
 
-            $('#cloud').jQCloud(basic_words);
+            console.log(categoriesSet);
+
+            function updateCloud(){
+                temporary_words  = $.grep(basic_words, function(v) {
+                    return categoriesChecked.get(v.category);
+                });
+
+                console.log(basic_words)
+                console.log(temporary_words)
+
+                $('#cloud').jQCloud('update', temporary_words);
+            }
+
+            var index=0
+            categoriesSet.forEach(function(value) {
+                $("#categoriesList").append("<input class='form-check-input' style='color:" + categoriesColor.get(value) + "' type='checkbox' value='" + value + "' id='defaultCheck" + index + "' checked><label class='form-check-label'  style='color:" + categoriesColor.get(value) + "' for='defaultCheck"+ index +"'>" + value + "</label><br>");
+                $("#defaultCheck" + index).change(function() {
+                    categoriesChecked.set(value,this.checked);
+                    updateCloud();
+                });
+                index++;
+            });
+            
+            $('#cloud').jQCloud(basic_words, {
+                delay: 50
+            });
 
             for(wordIndex=0;wordIndex < basic_words.length; wordIndex++){
                 node = $('#cloud_word_' + wordIndex);

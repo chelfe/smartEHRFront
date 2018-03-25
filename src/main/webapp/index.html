@@ -78,12 +78,15 @@
     <!-- endinject -->
     <!-- endbuild -->
 
+	<script src="bower_components/elasticsearch/elasticsearch.angular.min.js"></script>
+
     <!-- build:js app/app.js  -->
     <!-- inject:js -->
     <script src="app/app.module.js"></script>
     <script src="app/services/user/user.service.js"></script>
     <script src="app/services/profiles/profile.service.js"></script>
     <script src="app/services/profiles/page-ribbon.directive.js"></script>
+    <script src="app/services/elastic/elastic.service.js"></script>
     <script src="app/services/auth/register.service.js"></script>
     <script src="app/services/auth/principal.service.js"></script>
     <script src="app/services/auth/password-reset-init.service.js"></script>
@@ -95,10 +98,27 @@
     <script src="app/services/auth/auth.jwt.service.js"></script>
     <script src="app/services/auth/activate.service.js"></script>
     <script src="app/services/auth/account.service.js"></script>
+    <script src="app/search/search.state.js"></script>
+    <script src="app/search/search.service.js"></script>
+    <script src="app/search/search.controller.js"></script>
     <script src="app/layouts/navbar/navbar.controller.js"></script>
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/source-med-ehr/source-med-ehr-dialog.controller.js"></script>
+    <script src="app/entities/source-med-ehr/source-med-ehr-detail.controller.js"></script>
+    <script src="app/entities/source-med-ehr/source-med-ehr-delete-dialog.controller.js"></script>
+    <script src="app/entities/source-med-ehr/source-med-ehr.state.js"></script>
+    <script src="app/entities/source-med-ehr/source-med-ehr.service.js"></script>
+    <script src="app/entities/source-med-ehr/source-med-ehr.search.service.js"></script>
+    <script src="app/entities/source-med-ehr/source-med-ehr.controller.js"></script>
+    <script src="app/entities/source-ehr/source-ehr-dialog.controller.js"></script>
+    <script src="app/entities/source-ehr/source-ehr-detail.controller.js"></script>
+    <script src="app/entities/source-ehr/source-ehr-delete-dialog.controller.js"></script>
+    <script src="app/entities/source-ehr/source-ehr.state.js"></script>
+    <script src="app/entities/source-ehr/source-ehr.service.js"></script>
+    <script src="app/entities/source-ehr/source-ehr.search.service.js"></script>
+    <script src="app/entities/source-ehr/source-ehr.controller.js"></script>
     <script src="app/entities/job-my-suffix/job-my-suffix-dialog.controller.js"></script>
     <script src="app/entities/job-my-suffix/job-my-suffix-detail.controller.js"></script>
     <script src="app/entities/job-my-suffix/job-my-suffix-delete-dialog.controller.js"></script>
@@ -114,6 +134,20 @@
     <script src="app/entities/employee-my-suffix/employee-my-suffix.service.js"></script>
     <script src="app/entities/employee-my-suffix/employee-my-suffix.search.service.js"></script>
     <script src="app/entities/employee-my-suffix/employee-my-suffix.controller.js"></script>
+    <script src="app/entities/employee-ehr/employee-ehr-dialog.controller.js"></script>
+    <script src="app/entities/employee-ehr/employee-ehr-detail.controller.js"></script>
+    <script src="app/entities/employee-ehr/employee-ehr-delete-dialog.controller.js"></script>
+    <script src="app/entities/employee-ehr/employee-ehr.state.js"></script>
+    <script src="app/entities/employee-ehr/employee-ehr.service.js"></script>
+    <script src="app/entities/employee-ehr/employee-ehr.search.service.js"></script>
+    <script src="app/entities/employee-ehr/employee-ehr.controller.js"></script>
+    <script src="app/entities/document-med-ehr/document-med-ehr-dialog.controller.js"></script>
+    <script src="app/entities/document-med-ehr/document-med-ehr-detail.controller.js"></script>
+    <script src="app/entities/document-med-ehr/document-med-ehr-delete-dialog.controller.js"></script>
+    <script src="app/entities/document-med-ehr/document-med-ehr.state.js"></script>
+    <script src="app/entities/document-med-ehr/document-med-ehr.service.js"></script>
+    <script src="app/entities/document-med-ehr/document-med-ehr.search.service.js"></script>
+    <script src="app/entities/document-med-ehr/document-med-ehr.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>

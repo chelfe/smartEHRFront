@@ -20,19 +20,43 @@ entity Job {
 	maxSalary Long
 }
 
-
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
 	Employee{job} to Job
 }
 
+entity DocumentMed {
+	index String,
+	type String,
+	id String,
+	score Float,
+}
+
+entity SourceMed {
+	numphrase Integer,
+	sentence String,
+	document String,
+	doc_date String,
+	startposition Integer,
+	endposition Integer,
+	candidatetermstring String,
+	candidateterm String,
+	normalizedterm String,
+	lemmaterm String,
+	docType String
+}
+
+relationship OneToOne {
+	DocumentMed{source} to SourceMed
+}
 
 // Set pagination options
+paginate DocumentMed, Employee with infinite-scroll
 paginate Job with pagination
 
 dto * with mapstruct
 
 // Set service options to all except few
-service all with serviceImpl except Employee, Job
+service all with serviceImpl except Employee, Job, DocumentMed, SourceMed
 // Set an angular suffix
-angularSuffix * with mySuffix
+angularSuffix * with ehr

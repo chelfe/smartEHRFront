@@ -43,8 +43,8 @@
     "javadoc": "The Employee entity.",
     "entityTableName": "employee",
     "dto": "mapstruct",
-    "pagination": "no",
+    "pagination": "infinite-scroll",
     "service": "no",
     "jpaMetamodelFiltering": false,
-    "angularJSSuffix": "mySuffix"
+    "angularJSSuffix": "ehr"
 }

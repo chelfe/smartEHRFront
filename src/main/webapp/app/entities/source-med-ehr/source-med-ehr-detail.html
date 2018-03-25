@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span>Source Med</span> {{vm.sourceMed.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Numphrase</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.numphrase}}</span>
+        </dd>
+        <dt><span>Sentence</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.sentence}}</span>
+        </dd>
+        <dt><span>Document</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.document}}</span>
+        </dd>
+        <dt><span>Docdate</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.docdate}}</span>
+        </dd>
+        <dt><span>Startposition</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.startposition}}</span>
+        </dd>
+        <dt><span>Endposition</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.endposition}}</span>
+        </dd>
+        <dt><span>Candidatetermstring</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.candidatetermstring}}</span>
+        </dd>
+        <dt><span>Candidateterm</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.candidateterm}}</span>
+        </dd>
+        <dt><span>Normalizedterm</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.normalizedterm}}</span>
+        </dd>
+        <dt><span>Lemmaterm</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.lemmaterm}}</span>
+        </dd>
+        <dt><span>Doc Type</span></dt>
+        <dd>
+            <span>{{vm.sourceMed.docType}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="source-med-ehr-detail.edit({id:vm.sourceMed.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

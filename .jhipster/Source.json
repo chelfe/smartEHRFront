@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "numphrase",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sentence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "document",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "docdate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startposition",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "endposition",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "candidatetermstring",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "candidateterm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "normalizedterm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lemmaterm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "docType",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180324132945",
+    "entityTableName": "source",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "ehr"
+}

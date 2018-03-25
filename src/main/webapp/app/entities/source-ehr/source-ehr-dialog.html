@@ -1,0 +1,92 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySourceLabel">Create or edit a Source</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.source.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.source.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_numphrase">Numphrase</label>
+            <input type="number" class="form-control" name="numphrase" id="field_numphrase"
+                    ng-model="vm.source.numphrase"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_sentence">Sentence</label>
+            <input type="text" class="form-control" name="sentence" id="field_sentence"
+                    ng-model="vm.source.sentence"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_document">Document</label>
+            <input type="text" class="form-control" name="document" id="field_document"
+                    ng-model="vm.source.document"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_docdate">Docdate</label>
+            <input type="text" class="form-control" name="docdate" id="field_docdate"
+                    ng-model="vm.source.docdate"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_startposition">Startposition</label>
+            <input type="number" class="form-control" name="startposition" id="field_startposition"
+                    ng-model="vm.source.startposition"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_endposition">Endposition</label>
+            <input type="number" class="form-control" name="endposition" id="field_endposition"
+                    ng-model="vm.source.endposition"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_candidatetermstring">Candidatetermstring</label>
+            <input type="text" class="form-control" name="candidatetermstring" id="field_candidatetermstring"
+                    ng-model="vm.source.candidatetermstring"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_candidateterm">Candidateterm</label>
+            <input type="text" class="form-control" name="candidateterm" id="field_candidateterm"
+                    ng-model="vm.source.candidateterm"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_normalizedterm">Normalizedterm</label>
+            <input type="text" class="form-control" name="normalizedterm" id="field_normalizedterm"
+                    ng-model="vm.source.normalizedterm"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lemmaterm">Lemmaterm</label>
+            <input type="text" class="form-control" name="lemmaterm" id="field_lemmaterm"
+                    ng-model="vm.source.lemmaterm"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_docType">Doc Type</label>
+            <input type="text" class="form-control" name="docType" id="field_docType"
+                    ng-model="vm.source.docType"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

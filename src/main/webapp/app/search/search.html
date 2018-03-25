@@ -1,0 +1,53 @@
+<div ng-cloak>
+    <div class="row">
+		<div class="container">
+			<div class="row">
+		        <div class="col-md-11">
+		    		<h2>Rechercher</h2>
+		            <div id="custom-search-input">
+		                <div class="input-group col-md-12">
+		                    <input type="text" ng-model="vm.searchQuery" class="form-control input-lg" placeholder="diabete, endocrinologie, insuline, ..." />
+		                    <span class="input-group-btn">
+		                        <button class="btn btn-info btn-lg" type="button" ng-click="vm.search(vm.searchQuery)">
+		                            <i class="glyphicon glyphicon-search"></i>
+		                        </button>
+		                    </span>
+		                </div>
+		            </div>
+		        </div>
+			</div>
+			
+			<div class="row" ng-repeat="result in vm.results">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-12"><h3><a href ng-click="vm.getDocumentBody(result.document)">{{result.doc_type}} du {{result.doc_date}}</a></h3></div>
+					</div>
+					<div class="row" ng-repeat="documentMed in result.documentMedList">
+						<div class="col-md-12"><p><span ng-bind-html="documentMed.sentence | highlight:documentMed.candidatetermstring"></span></p></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{vm.searchItem}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#searchModal').fadeOut()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{vm.documentBody}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#searchModal').fadeOut()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

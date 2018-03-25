@@ -1,0 +1,55 @@
+
+Madame Jeanne d'Arc 
+Date de naissance 01/01/1900
+(Feminin)
+
+
+Poids : 130kg
+Strasbourg, le lundi 11 novembre 1959
+Prescriptions relatives au traitement de l'affection de longue duree reconnue (liste ou hors liste)
+
+(AFFECTION EXONERANTE)
+
+· 1 PAIRE CISEAUX POINTUS UU
+1/J
+QSP 1 BOITE
+· 1 PINCE KOCHER UU
+1/J
+QSP 1 BOITE
+· 1 PINCE ANATOMIQUE UU
+1/J
+QSP '''''
+· CHAMP
+1/J
+QSP 1 BOITE 
+· SERUM PHYSIOLOGIQUE 0,9 % Nombre  1 BOITE'''''
+ FORMCHECKBOX 
+ Unidoses 20 ml
+
+· 1 BOITE COMPRESSES STERILES NON TISSEES 1 boite(s)
+ FORMCHECKBOX 
+ 5 x 5
+BANDE DE CREPE Nombre 1 BOITE
+Largeur 
+ FORMCHECKBOX 
+ 5 cm
+
+SPARADRAP 1 rouleau
+
+· CREME HYDRADANTE tube Nombre 1 TUBE
+ FORMCHECKBOX 
+ DEXERIL
+
+· PANSEMENTS
+
+ FORMCHECKBOX 
+ AUTRES : MEPITEL 
+
+
+
+Nombre 1 BOITE 
+Prescriptions SANS RAPPORT avec l'affection de longue duree
+
+(MALADIES INTERCURRENTES)
+
+Medecin responsable :  Pr Magnus Carlsen

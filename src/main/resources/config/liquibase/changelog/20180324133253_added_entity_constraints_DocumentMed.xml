@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity DocumentMed.
+    -->
+    <changeSet id="20180324133253-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="source_id"
+                                 baseTableName="document_med"
+                                 constraintName="fk_document_med_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="source_med"/>
+
+    </changeSet>
+</databaseChangeLog>

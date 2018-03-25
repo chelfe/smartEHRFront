@@ -1,0 +1,55 @@
+
+PROTOCOLE  D'ADAPTATION  DE  L'INSULINOTHERAPIE
+
+Adapter les doses d'insuline selon les glycemies de la veille.
+
+Objectifs de glycemies a jeun : 0.8 - 1.2 g/l
+
+Objectifs de glycemies 2h apres les repas : 1.20 ' 1.60 g/l
+
+C'est toujours le chiffre le plus bas qui commande
+
+Si les doses d'insuline sont < 10UI, il faut adapter les doses de 1 UI 
+
+Si les doses d'insuline sont > 10UI, il faut adapter les doses de 2 UI 
+
+PAS DE REPAS = PAS D'INSULINE RAPIDE (NOVORAPID)
+
+Insuline rapide du matin : NOVORAPID
+
+· Si la glycemie a 10h est < 1.2 g/L ou si la glycemie a 12h est < 0.8 g/L, diminuer la NOVORAPID du matin des le lendemain
+
+· Si la glycemie a 10h est > 1.60  g/L ou si la glycemie a 12h est > 1.20 g/L 2-3 jours de suite, augmenter la NOVORAPID du matin. 
+
+Insuline du midi : NOVORAPID
+
+· Si la glycemie a 14h est < 1.2 g/L ou si glycemie a 19h < 0.8  g/L, diminuer la NOVORAPID du midi des le lendemain.
+
+· Si la glycemie a 14h est > 1.60  g/L ou si la glycemie a 19h est  > 1.20 g/L 2-3 jours de suite, augmenter la NOVORAPID du midi. 
+
+Insuline rapide du soir : NOVORAPID
+
+· Si la glycemie a 21h est < 1.2 g/L, ou si hypo avant minuit diminuer la NOVORAPID du soir des le lendemain. 
+
+· Si la glycemie a 21h est > 1.60 g/L, 2-3 jours de suite, augmenter la NOVORAPID du soir.
+
+TOUJOURS FAIRE LA TOUJEO
+Insuline lente du soir : TOUJEO
+
+· Si glycemie au reveil < 0.8 g/L ou hypo apres minuit, diminuer la TOUJEO le soir meme
+
+· Si glycemie au reveil > 1.20 g/L 2-3 jours de suite, augmenter la TOUJEO le soir
+
+Si malaise, sueurs, tremblements (HYPOGLYCEMIE)
+
+- Mise en securite (arret de la conduite, travail, etc.')
+
+- Controle de la glycemie
+
+- Resucrage si hypoglycemie < 0.7 g/L (3 morceaux de sucre ou un verre de jus de fruit).
+
+- Recontrole 30 min apres
+
+- Diminution de l'insuline responsable (et pas la suivante)
+
+

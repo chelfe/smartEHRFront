@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Document Med</span> {{vm.documentMed.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Index</span></dt>
+        <dd>
+            <span>{{vm.documentMed.index}}</span>
+        </dd>
+        <dt><span>Type</span></dt>
+        <dd>
+            <span>{{vm.documentMed.type}}</span>
+        </dd>
+        <dt><span>Score</span></dt>
+        <dd>
+            <span>{{vm.documentMed.score}}</span>
+        </dd>
+        <dt><span>Source</span></dt>
+        <dd>
+            <a ui-sref="source-med-ehr-detail({id:vm.documentMed.sourceId})">{{vm.documentMed.sourceId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="document-med-ehr-detail.edit({id:vm.documentMed.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

@@ -28,6 +28,14 @@
                     padding: 1px 5px;
                 }
 
+                .tl-storyslider{
+                    display:none;
+                }
+
+                .tl-timenav{
+                    height: 88%;
+                }
+
             </style>
 
             <div class="row" style="margin-bottom:1%; background-color: #7e7b6d; color: whitesmoke">
@@ -322,105 +330,61 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div id="visualization"></div>
-                    <link href="bower_components/vis/dist/vis.css" rel="stylesheet" type="text/css" />
-                    <script src="bower_components/vis/dist/vis.js"></script>
-                    <script type="application/javascript">
-                        var container = document.getElementById('visualization');
+                    <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
 
-                        // Create a DataSet (allows two way data-binding)
-                        var groups = new vis.DataSet([
-                            {id: 1, content:'Consultation endoc<br>', value: 1},
-                            {id: 2, content:'consultation ophtalmo<br>', value: 2},
-                            {id: 3, content:'Cardio<br>'},
-                            {id: 4, content:'Médicaments<br>'}
-                        ]);
+                    <!-- 2 -->
+                    <script type="text/javascript" src="content/js/timeline.js"></script>
 
-                        var items = new vis.DataSet();
+                    <div id='timeline-embed' style="width: 100%; height: 300px"></div>
 
-                        items.add({
-                            id: 1,
-                            group: 2,
-                            content: '<img src="../../content/images/BilanOphtalmo.png">',
-                            start: '2017-03-01',
-                            type: 'box'
-                        });
+                    <!-- 3 -->
+                    <script type="text/javascript">
 
-                        items.add({
-                            id: 3,
-                            group: 1,
-                            content: '<img src="../../content/images/BilanEndocrinologique.png">' ,
-                            start: '2017-03-30',
-                            type: 'box'
-                        });
-
-                        items.add({
-                            id: 4,
-                            group: 3,
-                            content: '<img src="../../content/images/BilanHba1c.png">' ,
-                            start: '2017-04-12',
-                            type: 'box'
-                        });
-
-                        items.add({
-                            id: 2,
-                            group: 2,
-                            content: '<img src="../../content/images/BilanOphtalmo.png">' ,
-                            start: new Date (2018,2,5)
-                        });
-
-                        items.add({
-                            id: 5,
-                            group: 4,
-                            content: '<img src="../../content/images/Medoc.png">' ,
-                            start: new Date (2018,3,20),
-                            end: new Date (2018,7,20)
-                        });
-
-                        // Configuration for the Timeline
-                        //        var options = {};
                         var options = {
-                            groupOrder: function (a, b) {
-                                return a.value - b.value;
-                            },width: '100%',
-                            height: '600px',
-                            margin: {
-                              item: 30
-                            }
-                        };
-
-                        // Create a Timeline
-                        //        var timeline = new vis.Timeline(container, groups, items, options);
-                        var timeline = new vis.Timeline(container);
-                        timeline.setOptions(options);
-                        timeline.setGroups(groups);
-                        timeline.setItems(items);
-
-                        //        timeline.on('select', function (properties) {
-                        ////        	  alert('selected items: ' + JSON.stringify(properties));
-                        //        	alert('selected items: ' + properties.items);
-                        //        	$('#myModal').fadeIn();
-                        //        	});
-
-                        timeline.on('select', function (properties) {
-                            logEvent('select', properties);
-                        });
-
-                        items.on('*', function (event, properties) {
-                            logEvent(event, properties);
-                        });
-
-                        function logEvent(event, properties) {
-                            var log = document.getElementById('log');
-                            var msg = document.createElement('div');
-//            $('#myModal').fadeIn();
-                            console.log( 'event=' + JSON.stringify(event) + ', ' +
-                                'properties=' + JSON.stringify(properties))
-                                
-                                $('#searchModal img').attr('src', '/content/images/hba1c.png?id='+ properties.items[0]).promise().done(function(){
-                        			$('#searchModal').fadeIn();
-                        		});
+                            hash_bookmark: false,
+                            initial_zoom: 0.5,
+                            scale_factor: 0.7,
+                            marker_height_min: 60
                         }
+
+                        function make_the_json(){
+                            return {eras: {start_date:{year:2017,month:2,day:20},end_date:{year:2017,month:5,day:20}},
+                                events:[
+                                    {start_date:{year:2017,month:9,day:20},
+                                        group:'ophtalmo',
+                                        text:{headline:"<img src=\"/content/images/BilanOphtalmo.png\"/><div style='color: #0f0f0f'>Bilan Optalmo</div>"}
+                                    },
+                                    {
+                                        start_date: {year: 2016, month: 8, day: 20},
+                                        group:'ophtalmo',
+                                        text: {headline: "<img src=\"/content/images/BilanOphtalmo.png\"/><div style='color: #0f0f0f'>Bilan Optalmo</div>"}
+                                    },
+                                    {
+                                        start_date:{year:2018,month:3,day:20},
+                                        group:'endocrino',
+                                        text:{headline:"<img src=\"/content/images/BilanEndocrinologique.png\"/><div style='color: #0f0f0f'>Bilan endocrino</div>"}
+                                    },
+                                    {
+                                        start_date:{year:2017,month:7,day:20},
+                                        group:'cardio',
+                                        text:{headline:"<img src=\"/content/images/BilanHba1c.png\"/><div style='color: #0f0f0f'>Bilan cardio</div>"}
+                                    },
+                                    {
+                                        start_date:{year:2017,month:7,day:20},
+                                        end_date:{year:2018,month:12,day:31},
+                                        group:'medication',
+                                        text:{headline:"<img src=\"/content/images/Medoc.png\"/><div style='color: #0f0f0f'>Daonil</div>"}
+                                    },
+                                    {
+                                        start_date:{year:2017,month:2,day:20},
+                                        group:'cardio',
+                                        text:{headline:"<img src=\"/content/images/BilanHba1c.png\"/><div style='color: #0f0f0f'>Bilan cardio</div>"}
+                                    }
+                                    ]}
+                        }
+
+                        var timeline_json = make_the_json();
+                        window.timeline = new TL.Timeline('timeline-embed', timeline_json,options);
 
                     </script>
                 </div>

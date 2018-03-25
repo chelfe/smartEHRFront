@@ -220,7 +220,12 @@
                     $.each(basic_words, function (index, value) {
                         value.handlers = {
                             click: function () {
-                                alert('You clicked the word !');
+                                
+                            	$('#searchBox').val('diabete');
+                                window.timeline = new TL.Timeline('timeline-embed', window.timeline_json ,options);
+                                
+                                $(".tl-timemarker-content").click(function() { $('#searchModal').fadeIn(); });
+                            	
                             }
                         };
 
@@ -318,7 +323,7 @@
                     <h2>Rechercher</h2>
                     <div id="custom-search-input">
                         <div class="input-group col-md-12">
-                            <input type="text" ng-model="vm.searchQuery" class="form-control input-lg" placeholder="diabete, endocrinologie, insuline, ..." />
+                            <input id="searchBox" type="text" ng-model="vm.searchQuery" class="form-control input-lg" placeholder="diabete, endocrinologie, insuline, ..." />
                             <span class="input-group-btn">
 		                        <button class="btn btn-info btn-lg" type="button" ng-click="vm.search(vm.searchQuery)">
 		                            <i class="glyphicon glyphicon-search"></i>
@@ -328,6 +333,8 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="row">&nbsp;</div>
             <div class="row">
                 <div class="col-md-12">
                     <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
@@ -345,6 +352,13 @@
                             initial_zoom: 0.5,
                             scale_factor: 0.7,
                             marker_height_min: 60
+                        }
+                        
+                        function make_the_json_empty(){
+                            return {eras: {start_date:{year:2017,month:2,day:20},end_date:{year:2017,month:5,day:20}},
+                                events:[
+                                	
+                                    ]}
                         }
 
                         function make_the_json(){
@@ -383,10 +397,14 @@
                                     ]}
                         }
 
-                        var timeline_json = make_the_json();
-                        window.timeline = new TL.Timeline('timeline-embed', timeline_json,options);
+                        window.timeline_json = make_the_json();
+                        window.timeline = new TL.Timeline('timeline-embed', make_the_json_empty() ,options);
 
                         $(".tl-timenav").css("height","88%");
+                        
+                        $(".tl-timemarker-content").click(function() { $('#searchModal').fadeIn(); });
+                        
+                        $(".tl-message-content").html('SmartEHR pr&ecirc;t');
 
                     </script>
                 </div>
@@ -407,7 +425,7 @@
         </button>
       </div>
       <div class="modal-body">
-      	<img alt="" src="" style="width: 100%;"></img>
+      	<img alt="" src="/content/images/hba1c.png" style="width: 100%;"></img>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#searchModal').fadeOut()">Close</button>

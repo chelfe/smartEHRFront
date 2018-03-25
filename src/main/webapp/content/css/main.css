@@ -339,4 +339,39 @@ ui bootstrap tweaks
 
 
 
+/* .vis-timeline.vis-bottom, .vis-content, .vis-labelset, .vis-itemset { */
+/*   height: 100% !important; */
+/*   visibility:visible !important; */
+/* } */
+/* .vis-content { */
+/*   position:static; */
+/* } */
+/* .vis-labelset, .vis-foreground, .vis-background { */
+/*   display:flex; */
+/*   flex-direction:column; */
+/* } */
+/* .vis-label, .vis-group { */
+/*   flex:1; */
+/*   max-height:initial; */
+/* } */
+
+/* .vis-group { */
+/* 	height: 100px; */
+/* } */
+
+/* .vis-label { */
+/* 	height: 60px; */
+/* } */
+/* .vis-label { */
+/*   display:flex; */
+/* } */
+/* .vis-label .vis-inner .label { */
+/*   height:100%; */
+/*   display:flex; */
+/*   align-items:center; */
+/* } */
+/* .vis-item { */
+/*   height: 80%; */
+/* } */
+
 /* jhipster-needle-css-add-main JHipster will add new css style */

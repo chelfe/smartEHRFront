@@ -1,41 +1,315 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1>Welcome, Java Hipster!</h1>
-            <p class="lead">This is your homepage</p>
+    <div ng-switch="vm.isAuthenticated()">
+        <div ng-switch-when="true">
+            <style>
+                .form-group input[type="checkbox"] {
+                    display: none;
+                }
 
-            <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true">
-                    You are logged in as user "{{vm.account.login}}".
-                </div>
+                .form-group input[type="checkbox"] + .btn-group > label span {
+                    width: 20px;
+                }
 
-                <div class="alert alert-warning" ng-switch-when="false">
-                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-                </div>
+                .form-group input[type="checkbox"] + .btn-group > label span:first-child {
+                    display: none;
+                }
+                .form-group input[type="checkbox"] + .btn-group > label span:last-child {
+                    display: inline-block;
+                }
 
-                <div class="alert alert-warning" ng-switch-when="false">
-                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
-                </div>
+                .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+                    display: inline-block;
+                }
+                .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+                    display: none;
+                }
+
+                .btn {
+                    padding: 1px 5px;
+                }
+
+            </style>
+
+            <div class="row" style="margin-bottom:1%; background-color: #7e7b6d; color: whitesmoke">
+                <h2 style="padding-left: 2%;">Votre patient</h2>
             </div>
 
-            <p>
-                If you have any question on JHipster:
-            </p>
+            <div class="row">
+                <div class="col-md-offset-1 col-md-2">
+                    <img src="content/images/jeanneDArc.jpg" class="img-responsive img-circle" width="200px"
+                         height="200px"/>
+                    <p style="text-align: center">Jeanne d'Arc, 67 ans</p>
+                </div>
+                <div class="col-md-offset-1 col-md-4">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-10">
+                            <b>Antécédents :</b>
+                            <ul id="lastInfoList"></ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-10">
+                            <b>Prescriptions en court :</b>
+                            <ul id="onGoingPrescriptionsList"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <b>Contacts :</b>
+                    <div id="contactList"></div>
+                </div>
 
-            <ul>
-                <li><a href="http://www.jhipster.tech/" target="_blank" rel="noopener">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener">follow @java_hipster on Twitter</a></li>
-            </ul>
+            </div>
 
-            <p>
-             <span>If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
-            </p>
+            <div class="row" style="margin-bottom:5%;background-color: #7e7b6d; color: whitesmoke">
+                <h2 style="padding-left: 2%;">SmartEHR</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3" style="padding-top: 5%">
+                    <div id="categoriesListA" class="form-check">
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-top: 5%">
+                    <div id="categoriesListB" class="form-check">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div id="cloud" style="height: 200px; width:500px"></div>
+                </div>
+                <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
+
+                <link rel="stylesheet" href="bower_components/jqcloud2/dist/jqcloud.css">
+
+
+                <script type="application/javascript">
+
+                    function LightenDarkenColor(col, amt) {
+
+                        var usePound = false;
+
+                        if (col[0] == "#") {
+                            col = col.slice(1);
+                            usePound = true;
+                        }
+
+                        var num = parseInt(col,16);
+
+                        var r = (num >> 16) + amt;
+
+                        if (r > 255) r = 255;
+                        else if  (r < 0) r = 0;
+
+                        var b = ((num >> 8) & 0x00FF) + amt;
+
+                        if (b > 255) b = 255;
+                        else if  (b < 0) b = 0;
+
+                        var g = (num & 0x0000FF) + amt;
+
+                        if (g > 255) g = 255;
+                        else if (g < 0) g = 0;
+
+                        return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
+
+                    }
+
+                    var lastInfoList = ["3 interventions chirurgicales", "Bilan opthalmo normal", "Coloscopie"];
+                    var onGoingPrescriptionsList = ["Daonil (jusqu'au 31/12/2018)"];
+                    var contactList = [{name: "Gégé Desboutons",mail : "gege.dermato@mss.sante.gov"}, {name: "Nono Rienachangé",mail : "nono.kine@mss.sante.gov"}];
+                    var categoriesSet = new Set();
+                    var categoriesColor = new Map();
+                    var categoriesChecked = new Map();
+                    var temporary_words;
+                    var basic_words = [
+                        {
+                            text: "diabete",
+                            weight: 19,
+                            category: "Diabétologie",
+                            color: "#6687E7",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "erysipele",
+                            weight: 14,
+                            category: "Maladies infectieuses",
+                            color: "#ff3d15",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "hypoglycemie",
+                            weight: 6,
+                            category: "Diabétologie",
+                            color: "#6687E7",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "lymphoedeme",
+                            weight: 6,
+                            category: "Cardio-vasculaire",
+                            color: "#450515",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "hyperkeratose",
+                            weight: 4,
+                            category: "Dermatologie",
+                            color: "#23ff08",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "obesite",
+                            weight: 3,
+                            category: "Cardio-vasculaire",
+                            color: "#450515",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "retinopathie",
+                            weight: 3,
+                            category: "Diabétologie",
+                            color: "#6687E7",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "anemie",
+                            weight: 2,
+                            category: "Hématologie",
+                            color: "#FF9999",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "neuropathie diabetique",
+                            weight: 2,
+                            category: "Diabétologie",
+                            color: "#6687E7",
+                            link: "javascript:void(0)"
+                        },
+                        {
+                            text: "retinopathie diabetique",
+                            weight: 2,
+                            category: "Diabétologie",
+                            color: "#6687E7",
+                            link: "javascript:void(0)"
+                        }
+                    ]
+
+                    $("#lastInfoList").empty();
+                    $.each(lastInfoList, function (index, value) {
+                        $("#lastInfoList").append("<li>" + value + "</li>");
+                    });
+
+                    $("#onGoingPrescriptionsList").empty();
+                    $.each(onGoingPrescriptionsList, function (index, value) {
+                        $("#onGoingPrescriptionsList").append("<li>" + value + "</li>");
+                    });
+
+                    $("#contactList").empty();
+                    $.each(contactList, function (index, value) {
+                        $("#contactList").append("<p>Dr " + value.name + " <a href:'" + value.mail + "'>" + value.mail + "</a></p>");
+                    });
+
+                    $.each(basic_words, function (index, value) {
+                        value.handlers = {
+                            click: function () {
+                                alert('You clicked the word !');
+                            }
+                        };
+
+                        categoriesSet.add(value.category);
+                        categoriesColor.set(value.category, value.color);
+                        categoriesChecked.set(value.category, true);
+
+                    });
+
+                    console.log(categoriesSet);
+
+                    function updateCloud() {
+                        temporary_words = $.grep(basic_words, function (v) {
+                            return categoriesChecked.get(v.category);
+                        });
+
+                        console.log(basic_words)
+                        console.log(temporary_words)
+
+                        $('#cloud').jQCloud('update', temporary_words);
+                    }
+
+                    var index = 0
+                    temporary_set = new Set(categoriesSet);
+                    if(temporary_set.size>5){
+
+                    }
+
+                    function addCheckBox(index,value,selector){
+                        $(selector).append("<div class=\"[ form-group ]\">\n" +
+                            "                        <input type=\"checkbox\" name=\"fancy-checkbox-primary\" id=\"fancy-checkbox-primary" + index +"\" autocomplete=\"off\" checked/>\n" +
+                            "                        <div class=\"[ btn-group ]\">\n" +
+                            "                            <label for=\"fancy-checkbox-primary" + index + "\"class=\"[ btn btn-primary ]\">\n" +
+                            "                                <span class=\"[ glyphicon glyphicon-ok ]\"></span>\n" +
+                            "                                <span> </span>\n" +
+                            "                            </label>\n" +
+                            "                            <label for=\"fancy-checkbox-primary\" class=\"[ btn btn-default active ]\">\n" +
+                            "                                " + value +
+                            "                            </label>\n" +
+                            "                        </div>\n" +
+                            "                    </div>");
+                    }
+
+                    function configureCheckBoxColor(value,selector){
+                        selector.css("background-color",categoriesColor.get(value)).hover(
+                            function(){
+                                $(this).css('background-color',LightenDarkenColor(categoriesColor.get(value),-30));
+                            },
+                            function(){
+                                $(this).css('background-color',categoriesColor.get(value));
+                            });
+                        selector.css("border-color",LightenDarkenColor(categoriesColor.get(value),-10));
+                        selector.css("background-color",LightenDarkenColor(categoriesColor.get(value),-10));
+                    }
+
+                    $("#categoriesListB").empty()
+                    temporary_set.forEach(function (value) {
+                        if(index<3) {
+                            addCheckBox(index,value,$("#categoriesListB"));
+                            $("#fancy-checkbox-primary" + index).change(function () {
+                                categoriesChecked.set(value, this.checked);
+                                updateCloud();
+                            });
+                            configureCheckBoxColor(value,$("[for=\"fancy-checkbox-primary" + index + "\"]"));
+                            temporary_set.delete(value);
+                            index++;
+                        }
+
+                    });
+                    $("#categoriesListA").empty()
+                    temporary_set.forEach(function (value) {
+                            addCheckBox(index,value,$("#categoriesListA"));
+                            $("#fancy-checkbox-primary" + index).change(function () {
+                                categoriesChecked.set(value, this.checked);
+                                updateCloud();
+                            });
+                            configureCheckBoxColor(value,$("[for=\"fancy-checkbox-primary" + index + "\"]"));
+                            temporary_set.delete(value);
+                            index++;
+                    });
+
+                    $('#cloud').jQCloud(basic_words, {
+                        delay: 50
+                    });
+
+                    for (wordIndex = 0; wordIndex < basic_words.length; wordIndex++) {
+                        node = $('#cloud_word_' + wordIndex);
+                        node.replaceWith("<a>wordIndex</a>");
+                    }
+                </script>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

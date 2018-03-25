@@ -315,6 +315,20 @@
                         node = $('#cloud_word_' + wordIndex);
                         node.replaceWith("<a>wordIndex</a>");
                     }
+                    
+                    
+                    $('#searchBox').keypress(function (e) {
+                    	 var key = e.which;
+                    	 if(key == 13)  // the enter key code
+                    	  {
+                    		 if($('#searchBox').val().indexOf('imc') !== -1) {
+                    		 	window.timeline = new TL.Timeline('timeline-embed', window.timeline_imc_json ,options);
+                    		 	$(".tl-timemarker-content").click(function() { $('#searchModal').fadeIn(); });
+                    		 }
+                    	    return false;  
+                    	  }
+                    	});   
+                    
                 </script>
 
             </div>
@@ -380,6 +394,32 @@
                                     },
                                     {
                                         start_date:{year:2017,month:7,day:20},
+                                        end_date:{year:2018,month:12,day:31},
+                                        group:'medication',
+                                        text:{headline:"<img src=\"/content/images/Medoc.png\"/><div style='color: #0f0f0f'>Daonil</div>"}
+                                    }
+                                    ]}
+                        }
+                        
+                        function make_the_json_imc(){
+                            return {eras: {start_date:{year:2017,month:2,day:20},end_date:{year:2017,month:5,day:20}},
+                                events:[
+                                    {start_date:{year:2017,month:9,day:20},
+                                        group:'ophtalmo',
+                                        text:{headline:"<img src=\"/content/images/BilanOphtalmo.png\"/><div style='color: #0f0f0f'>Bilan Optalmo</div>"}
+                                    },
+                                    {
+                                        start_date: {year: 2016, month: 8, day: 20},
+                                        group:'ophtalmo',
+                                        text: {headline: "<img src=\"/content/images/BilanOphtalmo.png\"/><div style='color: #0f0f0f'>Bilan Optalmo</div>"}
+                                    },
+                                    {
+                                        start_date:{year:2018,month:3,day:20},
+                                        group:'endocrino',
+                                        text:{headline:"<img src=\"/content/images/BilanEndocrinologique.png\"/><div style='color: #0f0f0f'>Bilan endocrino</div>"}
+                                    },
+                                    {
+                                        start_date:{year:2017,month:7,day:20},
                                         group:'cardio',
                                         text:{headline:"<img src=\"/content/images/BilanHba1c.png\"/><div style='color: #0f0f0f'>Bilan cardio</div>"}
                                     },
@@ -398,6 +438,7 @@
                         }
 
                         window.timeline_json = make_the_json();
+                        window.timeline_imc_json = make_the_json_imc();
                         window.timeline = new TL.Timeline('timeline-embed', make_the_json_empty() ,options);
 
                         $(".tl-timenav").css("height","88%");

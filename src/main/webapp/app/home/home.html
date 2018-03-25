@@ -306,8 +306,119 @@
 
             </div>
             <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <h2>Rechercher</h2>
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" ng-model="vm.searchQuery" class="form-control input-lg" placeholder="diabete, endocrinologie, insuline, ..." />
+                            <span class="input-group-btn">
+		                        <button class="btn btn-info btn-lg" type="button" ng-click="vm.search(vm.searchQuery)">
+		                            <i class="glyphicon glyphicon-search"></i>
+		                        </button>
+		                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
+                    <div id="visualization"></div>
+                    <link href="bower_components/vis/dist/vis.css" rel="stylesheet" type="text/css" />
+                    <script src="bower_components/vis/dist/vis.js"></script>
+                    <script type="application/javascript">
+                        var container = document.getElementById('visualization');
 
+                        // Create a DataSet (allows two way data-binding)
+                        var groups = new vis.DataSet([
+                            {id: 1, content:'Consultation endoc<br>', value: 1},
+                            {id: 2, content:'consultation ophtalmo<br>', value: 2},
+                            {id: 3, content:'Cardio<br>'},
+                            {id: 4, content:'Médicaments<br>'}
+                        ]);
+
+                        var items = new vis.DataSet();
+
+                        items.add({
+                            id: 1,
+                            group: 2,
+                            content: '<img src="../../content/images/BilanOphtalmo.png">',
+                            start: '2016-04-20',
+                            type: 'box'
+                        });
+
+                        items.add({
+                            id: 3,
+                            group: 1,
+                            content: '<img src="../../content/images/BilanEndocrinologique.png">' ,
+                            start: '2017-04-20',
+                            end: '2016-04-25',
+                            type: 'box'
+                        });
+
+                        items.add({
+                            id: 4,
+                            group: 3,
+                            content: '<img src="../../content/images/BilanHba1c.png">' ,
+                            start: '2017-05-20',
+                            type: 'box'
+                        });
+
+                        items.add({
+                            id: 2,
+                            group: 2,
+                            content: '<img src="../../content/images/BilanOphtalmo.png">' ,
+                            start: new Date (2016,3,20),
+                            end: new Date (2018,7,20),
+                            type: 'box'
+                        });
+
+                        items.add({
+                            id: 5,
+                            group: 4,
+                            content: '<img src="../../content/images/Medoc.png">' ,
+                            start: new Date (2016,4,20),
+                            end: new Date (2018,7,20),
+                            type: 'box'
+                        });
+
+                        // Configuration for the Timeline
+                        //        var options = {};
+                        var options = {
+                            groupOrder: function (a, b) {
+                                return a.value - b.value;
+                            },
+                        };
+
+                        // Create a Timeline
+                        //        var timeline = new vis.Timeline(container, groups, items, options);
+                        var timeline = new vis.Timeline(container);
+                        timeline.setOptions(options);
+                        timeline.setGroups(groups);
+                        timeline.setItems(items);
+
+                        //        timeline.on('select', function (properties) {
+                        ////        	  alert('selected items: ' + JSON.stringify(properties));
+                        //        	alert('selected items: ' + properties.items);
+                        //        	$('#myModal').fadeIn();
+                        //        	});
+
+                        timeline.on('select', function (properties) {
+                            logEvent('select', properties);
+                        });
+
+                        items.on('*', function (event, properties) {
+                            logEvent(event, properties);
+                        });
+
+                        function logEvent(event, properties) {
+                            var log = document.getElementById('log');
+                            var msg = document.createElement('div');
+//            $('#myModal').fadeIn();
+                            console.log( 'event=' + JSON.stringify(event) + ', ' +
+                                'properties=' + JSON.stringify(properties))
+                        }
+
+                    </script>
                 </div>
             </div>
         </div>

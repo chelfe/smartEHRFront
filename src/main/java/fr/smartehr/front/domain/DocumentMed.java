@@ -8,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -54,6 +56,8 @@ public class DocumentMed implements Serializable {
 
     @Column(name = "doc_type")
     private String doc_type;
+    
+    private List<String> candidateTermList = new ArrayList<>();
 
 	public String getId() {
 		return id;
@@ -157,10 +161,18 @@ public class DocumentMed implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DocumentMed [id=" + id + ", numphrase=" + numphrase + ", sentence=" + sentence + ", document="
+		return "DocumentMed [id=" + id + ", numphrase=" + numphrase + ", document="
 				+ document + ", doc_date=" + doc_date + ", startposition=" + startposition + ", endposition="
 				+ endposition + ", candidatetermstring=" + candidatetermstring + ", candidateterm=" + candidateterm
 				+ ", normalizedterm=" + normalizedterm + ", lemmaterm=" + lemmaterm + ", doc_type=" + doc_type + "]";
+	}
+
+	public List<String> getCandidateTermList() {
+		return candidateTermList;
+	}
+
+	public void setCandidateTermList(List<String> candidateTermList) {
+		this.candidateTermList = candidateTermList;
 	}
 
 

@@ -1,4 +1,4 @@
-Hopital de Strasbourg 
+ï»¿Hopital de Strasbourg 
 Jeanne d'Arc
 Service de Diabetologie 
 67000 Strasbourg
@@ -135,9 +135,9 @@ EQUILIBRE DU DIABETE
 
 
 -  pas de carnet de glycemie 
-· Traitement actuel : insuline + metformine 
-· Activite physique : non 
-· Alimentation : desequilibre 
+Â· Traitement actuel : insuline + metformine 
+Â· Activite physique : non 
+Â· Alimentation : desequilibre 
 
 Histoire du pied : 
 
@@ -163,7 +163,7 @@ Pied infecte :
 
 Sous augmentin 3g/jr depuis le 16 pour erysipele
 
-- 06/1958 cs aux urgences pour sd febrile a 39.5°C avec frissons. bonne tolerance
+- 06/1958 cs aux urgences pour sd febrile a 39.5Â°C avec frissons. bonne tolerance
 
 hemodynamique (TA = 150/50, Fc = 100/min, pas de marbrures).
 
@@ -229,7 +229,7 @@ Sur le plan digestif :pas de troubles du transit pas de nausees ni vomissements 
 PARACLINIQUE
 
 HbA1c   :   7.8%        
-TSH:  3.27µU/L
+TSH:  3.27ÂµU/L
 
 Iono : N
 
@@ -243,38 +243,38 @@ Bilan hepatique : ASAT : 24UI/l    ALAT : 24UI /l    GGT :    20UI/l    PAL : 88
 
 RETENTISSEMENT DU DIABETE
 
-· Ophtalmo : 
+Â· Ophtalmo : 
 
-· Date du dernier fond d'oeil: retinophotos en aout 1958 retinopathie diabetique minime 
-· Nephro :  
+Â· Date du dernier fond d'oeil: retinophotos en aout 1958 retinopathie diabetique minime 
+Â· Nephro :  
 
-· Microalbuminurie : pathologique albuminurie 39.5mg/l 
-· Creat : 48
-µmol/L
+Â· Microalbuminurie : pathologique albuminurie 39.5mg/l 
+Â· Creat : 48
+Âµmol/L
  DFG :
 172 ml/min
 
 - Neurologique : GRADE PODOLOGIQUE =
 Diapason :
-· Monofilament : erreurs
-· ROT :non
-· Douleurs :
+Â· Monofilament : erreurs
+Â· ROT :non
+Â· Douleurs :
 non
 DN4
 
-· Examen des pieds : erysipele pied droit depuis le 16/10/1958 mise sous augmentin par son medecin traitant 
+Â· Examen des pieds : erysipele pied droit depuis le 16/10/1958 mise sous augmentin par son medecin traitant 
 Pied droit mal perforant plantaire base metatarsien 1er 
 
 Protocole aquacel extra 
 
 Pied droit aggravation de la plaie de la face plantaire de l hallux 
-· Cardio-vasculaire : PREVENTION        : 
-· TA sous quadritherapie
+Â· Cardio-vasculaire : PREVENTION        : 
+Â· TA sous quadritherapie
 
-· Pouls peripheriques : non percus lymphoedeme des membres inferieurs ++ 
-· Dyspnee :non
-· ECG : normal rythme regulier 
-· Bilan lipidique : TG 1.92g/L, HDL 0.34g/L, LDL 0.79g/L
+Â· Pouls peripheriques : non percus lymphoedeme des membres inferieurs ++ 
+Â· Dyspnee :non
+Â· ECG : normal rythme regulier 
+Â· Bilan lipidique : TG 1.92g/L, HDL 0.34g/L, LDL 0.79g/L
 (objectif <    0.7   g/L)  
 
 EVOLUTION DANS LE SERVICE

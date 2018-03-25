@@ -1,4 +1,4 @@
-Votre patiente, Madame Jeanne d'Arc, nee le 01/01/1900, a ete hospitalisee du 01/01/1960 au 01/02/1960, pour la prise en charge d'un mal perforant plantaire.
+﻿Votre patiente, Madame Jeanne d'Arc, nee le 01/01/1900, a ete hospitalisee du 01/01/1960 au 01/02/1960, pour la prise en charge d'un mal perforant plantaire.
 
 Elle a actuellement un mal perforant plantaire de l'hallux D et un 2eme au niveau de la 1ere tete metatarsienne du pied G. 
 Elle a fait une dermite traitee par AUGMENTIN dont l'evolution fut favorable.
@@ -7,7 +7,7 @@ Elle a eu des pansements locaux avec une decharge en fauteuil roulant.
 Le mal perforant plantaire G a completement cicatrise et a droite l'evolution est en bonne. 
 
 Le diabete n'est pas suffisamment controle avec une Hba1c a 7.8 %.
-Elle a d'autres complication micro-vasculaires notamment une retinopathie diabetique non proliferante minime associee a une nephropathie diabetique incipiens avec une excretion urinaire d'albumine a 60 mmol/L, une creatinine a 50 �mol/L soit un DFG a 150 mL/min. elle n'a pas de complication macrovasculaire. La pression arterielle n'est pas bien controlee a 150/80 mmHg ; nous avons rajoute HYPERIUM a sa quadritherapie. Le LDL cholesterol est presque dans l'objectif a 0.80 g/L. elle fera plus attention et elle continuera a prendre ATORVASTATINE 10 mg.
+Elle a d'autres complication micro-vasculaires notamment une retinopathie diabetique non proliferante minime associee a une nephropathie diabetique incipiens avec une excretion urinaire d'albumine a 60 mmol/L, une creatinine a 50 µmol/L soit un DFG a 150 mL/min. elle n'a pas de complication macrovasculaire. La pression arterielle n'est pas bien controlee a 150/80 mmHg ; nous avons rajoute HYPERIUM a sa quadritherapie. Le LDL cholesterol est presque dans l'objectif a 0.80 g/L. elle fera plus attention et elle continuera a prendre ATORVASTATINE 10 mg.
 Sur le plan metabolique, elle est traitee par TRULUCITY x 1/semaine et insulinotherapie basale/bolus. 
 Le controle glycemique est tres satisfaisant. Elle ne fait pas d'hyper ni d'hypoglycemie symptomatique.
 

@@ -26,14 +26,14 @@
     }
     
     app.filter('highlight', function() {
-        return function(text, selectedWord) {
-          if(selectedWord) {
-            var pattern = new RegExp(selectedWord, "g");
-            return text.replace(pattern, '<mark><b>' + selectedWord + '</b></mark>');
+        return function(text, selectedWords) {
+          if(selectedWords) {
+        	$(selectedWords).each(function(selectedWord) {
+        		var pattern = new RegExp(selectedWords[selectedWord], "g");
+        		text = text.replace(pattern, '<mark><b>' + selectedWords[selectedWord] + '</b></mark>');
+        	});
           }
-          else {
-            return text;
-          }
+          return text;
         };
     });
 })();

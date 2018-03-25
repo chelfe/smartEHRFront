@@ -1,4 +1,4 @@
-Madame Jeanne d'Arc
+ï»¿Madame Jeanne d'Arc
 Service de Diabetologie 
 
 COMPTE RENDU D'HOSPITALISATION
@@ -92,11 +92,11 @@ HISTOIRE RECENTE:
 
 - 01/06/1958 : echographie doppler des membres inferieurs veineux = pas de phlebite.
 
-- 01/07/1958 cs aux urgences de Pellegrin pour sd febrile a 39.5°C avec frissons. bonne tolerance hemodynamique (TA = 140/60, Fc = 110/min, pas de marbrures). 
+- 01/07/1958 cs aux urgences de Pellegrin pour sd febrile a 39.5Â°C avec frissons. bonne tolerance hemodynamique (TA = 140/60, Fc = 110/min, pas de marbrures). 
 
 Erysipele MInf gauche sur MPP mal cicatrise. 
 
-Sd inf bio = CRP = 188.5 hyperleuco = 10.1G/L, PNN =9.1G/L. Creat= 65µM. Gly = 3G/L ; pas de cetonemie; RA = 25, non hyperosmolaire (osmol<300mO)
+Sd inf bio = CRP = 188.5 hyperleuco = 10.1G/L, PNN =9.1G/L. Creat= 65ÂµM. Gly = 3G/L ; pas de cetonemie; RA = 25, non hyperosmolaire (osmol<300mO)
 
 Rx pied gauche : pas de rupture corticale osseuse.
 Prelevement superficiel. Hemocs.
@@ -108,11 +108,11 @@ EQUILIBRE DU DIABETE
 
 -  ASG : 0
 
-· Traitement actuel : entree des urgences sous basal bolus
+Â· Traitement actuel : entree des urgences sous basal bolus
 
-· Activite physique :0
+Â· Activite physique :0
 
-· Alimentation : adaptee au diabete.
+Â· Alimentation : adaptee au diabete.
 EXAMEN CLINIQUE
 
 Poids :  120kg
@@ -154,20 +154,20 @@ Radio pied : pas de signe en faveur d'une osteite
 
 RETENTISSEMENT DU DIABETE
 
-· Ophtalmo : normal il y a deux ans. Retino dans le service :.un microanevrisme sur chaque retine : debut de RDNP minime a surveiller.
-· Nephro :  Microalbuminurie : 43 mg/24h sous LERCAPRESS a dose maximale. Creat : 62
-µmol/L
+Â· Ophtalmo : normal il y a deux ans. Retino dans le service :.un microanevrisme sur chaque retine : debut de RDNP minime a surveiller.
+Â· Nephro :  Microalbuminurie : 43 mg/24h sous LERCAPRESS a dose maximale. Creat : 62
+Âµmol/L
  DFG :
 105 ml/min
-· Neurologique : neuropathie connue, pied neurogene. Pas de douleur
-· Examen des pieds : cf grade podo 3
-· Cardio-vasculaire : cardiopathie hypertensive. Pas de suivi, doit prendre rendez vous en cardiologie
-· TA controlee sous quadritherapie (LERCAPRESS et LODOZ) 
-· Pouls peripheriques : +/+
-· Dyspnee : stade 2
-· Epreuve effort : 1957 sans particularite / echo 1957 sans particularite
-· ECG : tachycardie reguliere sinusale (FC 109 bpm), axe du coeur normal, hypertrophie auriculaire gauche, BAV I, BBD complet connu, pas de sus ni de sous decalage du segment ST onde Q en inferieur connu.onde T neg en V1, V2, V3 connues.
-· Bilan lipidique : TG 2.19 g/L, HDL 0.32 g/L, LDL 1.05 g/L
+Â· Neurologique : neuropathie connue, pied neurogene. Pas de douleur
+Â· Examen des pieds : cf grade podo 3
+Â· Cardio-vasculaire : cardiopathie hypertensive. Pas de suivi, doit prendre rendez vous en cardiologie
+Â· TA controlee sous quadritherapie (LERCAPRESS et LODOZ) 
+Â· Pouls peripheriques : +/+
+Â· Dyspnee : stade 2
+Â· Epreuve effort : 1957 sans particularite / echo 1957 sans particularite
+Â· ECG : tachycardie reguliere sinusale (FC 109 bpm), axe du coeur normal, hypertrophie auriculaire gauche, BAV I, BBD complet connu, pas de sus ni de sous decalage du segment ST onde Q en inferieur connu.onde T neg en V1, V2, V3 connues.
+Â· Bilan lipidique : TG 2.19 g/L, HDL 0.32 g/L, LDL 1.05 g/L
 (objectif <   0.7 tabac HTA et diabete) spontanement => Introduction TAHOR 10mg en cours d'hospitalisation
 EVOLUTION DANS LE SERVICE
 

@@ -6,7 +6,7 @@
 		    		<h2>Rechercher</h2>
 		            <div id="custom-search-input">
 		                <div class="input-group col-md-12">
-		                    <input type="text" ng-model="vm.searchQuery" class="form-control input-lg" placeholder="diabete, endocrinologie, insuline, ..." />
+		                    <input type="text" ng-model="vm.searchQuery" ng-keyup="$event.keyCode == 13 && vm.search(vm.searchQuery)" class="form-control input-lg" placeholder="diabete, endocrinologie, insuline, ..." />
 		                    <span class="input-group-btn">
 		                        <button class="btn btn-info btn-lg" type="button" ng-click="vm.search(vm.searchQuery)">
 		                            <i class="glyphicon glyphicon-search"></i>
@@ -20,10 +20,10 @@
 			<div class="row" ng-repeat="result in vm.results">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="col-md-12"><h3><a href ng-click="vm.getDocumentBody(result.document)">{{result.doc_type}} du {{result.doc_date}}</a></h3></div>
+						<div class="col-md-12"><h3><a href ng-click="vm.getDocumentBody(result.document, result.documentMedList)">{{result.doc_type}} du {{result.doc_date}}</a></h3></div>
 					</div>
 					<div class="row" ng-repeat="documentMed in result.documentMedList">
-						<div class="col-md-12"><p><span ng-bind-html="documentMed.sentence | highlight:documentMed.candidatetermstring"></span></p></div>
+						<div class="col-md-12"><p><span ng-bind-html="documentMed.sentence | highlight:documentMed.candidateTermList"></span></p></div>
 					</div>
 				</div>
 			</div>
@@ -34,7 +34,7 @@
 
 <!-- Modal -->
 <div class="modal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog" role="document" style="width:90%;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{vm.searchItem}}</h5>
@@ -43,7 +43,7 @@
         </button>
       </div>
       <div class="modal-body">
-        {{vm.documentBody}}
+        <p>{{vm.documentBody}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="$('#searchModal').fadeOut()">Close</button>

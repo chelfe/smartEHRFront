@@ -48,7 +48,8 @@ public class DocumentMedSearchService {
 
 		log.debug("Request Json : " + mapper.writerWithDefaultPrettyPrinter().writeValueAsString(elasticQueryRequest));
 
-		ResponseEntity<DocSearchResult> result = restTemplate.exchange("http://91.121.106.228:9200/document/_search?size=100",
+		//http://91.121.106.228:9200/document/_search?size=100
+		ResponseEntity<DocSearchResult> result = restTemplate.exchange("http://91.121.106.228:9200/document/CT/_search?size=100",
 				HttpMethod.POST, request, DocSearchResult.class);
 
 		Map<String, DocumentMedResponse> mapResults = new HashMap<>();

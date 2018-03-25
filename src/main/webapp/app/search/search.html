@@ -34,7 +34,7 @@
 
 <!-- Modal -->
 <div class="modal" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document" style="width:90%;">
+  <div class="modal-dialog" role="document" style="width:90%;overflow-y: initial !important">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{vm.searchItem}}</h5>
@@ -42,7 +42,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="height: 600px; overflow-y: auto;">
         <p>{{vm.documentBody}}</p>
       </div>
       <div class="modal-footer">

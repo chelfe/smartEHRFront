@@ -54,7 +54,7 @@
         }
         
         function processDataDocumentBody(data, selectedWords) {
-        	var result = data.replace(/[\r\n]/g, "<br>").replace(/(?:<br>\s*){2,}/g, '<br>');
+        	var result = data.replace(/[\r\n]/g, "<br>").replace(/(?:<br>\s*){3,}/g, '<br>');
         	
         	$(selectedWords).each(function(selectedWord) {
         		var pattern = new RegExp(selectedWords[selectedWord], "g");
